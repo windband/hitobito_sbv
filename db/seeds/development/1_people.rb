@@ -40,7 +40,7 @@ admins = {
   'Hans Seeberger'     => 'hans.seeberger@windband.ch',
   'Norber Kappeler'    => 'info@windband.ch',
   'Didier Bérard'      => 'didier.berard@bluewin.ch',
-  'Simon Betschmann'   => 'simon.betschmann@aarg-musikverband.ch',
+  'Simon Betschmann'   => 'simon@betschmann.ch',
   'Martin Scherer'     => 'tins@hispeed.ch',
   'Kantonalverband Jura' => 'jp.bendit@jinfo.ch',
   'Julien Schumacher'  => 'julien.schumacher@jesly.ch',
@@ -70,3 +70,16 @@ devs.each do |name, email|
 end
 
 seeder.assign_role_to_root(root, Group::Root::Admin)
+
+person = Person.find_by(email: 'simon@betschmann.ch')
+if person
+  [
+    [Group::Root.first, Group::Root::SuperAdmin],
+    [Group::Generalverband.first, Group::Generalverband::SuperAdmin]
+  ].each do |group, role_type|
+    next unless group
+
+    Role.seed_once(:person_id, :group_id, :type,
+      person_id: person.id, group_id: group.id, type: role_type.sti_name)
+  end
+end
