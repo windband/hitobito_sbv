@@ -12,6 +12,9 @@ de:
       group/generalverband:
         one: Generalverband
         other: Generalverbände
+      group/generalverband/super_admin:
+        one: Super-Administrator
+        other: Super-Administratoren
 
       group/root:
         one: Dachverband
@@ -49,6 +52,9 @@ de:
       group/root/suisa_admin:
         one: Verantwortlicher SUISA
         other: Verantwortliche SUISA
+      group/root/super_admin:
+        one: Super-Administrator
+        other: Super-Administratoren
 
       group/mitgliederverband:
         one: Mitgliederverband
@@ -169,6 +175,9 @@ de:
       role/admin:
         one: Administrator
         other: Administratoren
+      role/super_admin:
+        one: Super-Administrator
+        other: Super-Administratoren
       role/adressverwaltung:
         one: Adressverwaltung
         other: Adressverwaltung
@@ -336,6 +345,7 @@ de:
               layer_full: Alles Lesen und Schreiben auf dieser Ebene. Erstellen von Anlässen und Listen auf dieser Ebene.
               group_full: Lesen und Schreiben auf der Gruppe. Erstellen von Anlässen und Listen auf der Gruppe.
               uv_lohnsumme: Darf die UV-Lohnsummen verwalten.
+              super_admin: Voller Zugriff auf alle Funktionen und Daten im gesamten Verband.
 
       invoice_item:
         amount: Betrag

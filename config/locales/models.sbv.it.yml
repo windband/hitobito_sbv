@@ -13,6 +13,10 @@ it:
         one: Associazione o federazione generale
         many: Associazione o federazione generale
         other: Associazione o federazione generale
+      group/generalverband/super_admin:
+        one: Super-amministratore
+        many: Super-amministratori
+        other: Super-amministratori
 
       group/root:
         one: Associazione Mantello
@@ -61,6 +65,10 @@ it:
       group/root/suisa_admin:
         one: Verantwortlicher SUISA
         other: Verantwortliche SUISA
+      group/root/super_admin:
+        one: Super-amministratore
+        many: Super-amministratori
+        other: Super-amministratori
 
       group/mitgliederverband:
         one: Membro dell'associazione
@@ -206,6 +214,10 @@ it:
         one: Amministratore
         many: Amministratori
         other: Amministratori
+      role/super_admin:
+        one: Super-amministratore
+        many: Super-amministratori
+        other: Super-amministratori
       role/adressverwaltung:
         one: Gestione indirizzi
         many: Gestione indirizzi
@@ -395,6 +407,7 @@ it:
               layer_full: "A questo livello può leggere tutto e scrivere. \nA questo livello può creare eventi e liste."
               group_full: "Leggere e scrivere nel gruppo.\nCreare eventi e liste nel gruppo."
               uv_lohnsumme: Può gestire il salario AINF.
+              super_admin: Accesso completo a tutte le funzioni e i dati dell'associazione.
 
       invoice_item:
         amount: Betrag

@@ -98,12 +98,16 @@ module HitobitoSbv
         additional_person_attrs)
 
       ### abilities
+      Ability.prepend Sbv::Ability
       RoleAbility.include Sbv::RoleAbility
       GroupAbility.include Sbv::GroupAbility
       PersonAbility.include Sbv::PersonAbility
 
+      MailingListResource.readable_class = Sbv::MailingListReadables
+
       # uv_lohnsumme allows to manage the salary amount for the accident insurance
       Role::Permissions << :uv_lohnsumme
+      Role::Permissions << :super_admin
 
       # load this class after all abilities have been defined
       AbilityDsl::UserContext::GROUP_PERMISSIONS << :song_census

@@ -15,4 +15,8 @@ module Sbv::Person
 
     validates :first_name, :last_name, presence: true
   end
+
+  def super_admin?
+    permission?(:super_admin)
+  end
 end

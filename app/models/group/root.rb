@@ -80,5 +80,8 @@ class Group::Root < ::Group
   class SuisaAdmin < Role::SuisaAdmin
   end
 
-  roles Admin, SuisaAdmin
+  class SuperAdmin < Role::SuperAdmin
+  end
+
+  roles Admin, SuisaAdmin, SuperAdmin
 end

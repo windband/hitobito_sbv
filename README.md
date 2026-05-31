@@ -9,9 +9,11 @@ of the Schweizer Blasmusikverband.
 * Generalverband
   * Generalverband
     * Administrator: [:layer_and_below_full, :admin, :impersonation, :finance, :uv_lohnsumme]
+    * Super-Administrator: [:super_admin, :impersonation]
 * Dachverband
   * Dachverband
     * Administrator: [:layer_and_below_full, :admin, :impersonation, :finance, :song_census, :uv_lohnsumme]
+    * Super-Administrator: [:super_admin, :impersonation]
     * Verantwortlicher SUISA: [:group_read, :song_census]
   * Geschäftsstelle
     * Geschäftsführung: [:layer_and_below_full, :impersonation]
@@ -117,6 +119,23 @@ of the Schweizer Blasmusikverband.
     * Kontakt: []
 
 (Output of rake app:hitobito:roles)
+
+
+## Super-Administrator
+
+Die Rolle **Super-Administrator** vereint alle Rechte im gesamten Verband
+(z. B. Mailing-Listen in untergeordneten Layern, die für normale Administratoren
+gesperrt sind). Sie ist nur auf dem Generalverband und dem Dachverband verfügbar.
+
+* Nur bestehende Super-Administratoren können diese Rolle vergeben oder entziehen.
+* Die erste Vergabe erfolgt über die Rails-Konsole, z. B.:
+
+```ruby
+person = Person.find_by(email: "admin@example.ch")
+Group::Root.first.roles.create!(person: person, type: Group::Root::SuperAdmin.sti_name)
+# oder auf dem Generalverband:
+Group::Generalverband.first.roles.create!(person: person, type: Group::Generalverband::SuperAdmin.sti_name)
+```
 
 
 ## weiteren Musikerverband hinzufügen

@@ -20,11 +20,24 @@ module Sbv
         permission(:layer_and_below_full)
           .may(:create, :create_in_subgroup, :update, :destroy)
           .in_same_layer_or_visible_below
+
+        general(:create, :update, :destroy, :terminate).super_admin_role_manageable
       end
     end
 
     def in_every_group
       all
+    end
+
+    def super_admin_role_manageable
+      return true unless super_admin_role?
+
+      user_context.all_permissions.include?(:super_admin)
+    end
+
+    def super_admin_role?
+      role_class = subject.is_a?(Class) ? subject : subject.class
+      role_class <= Role::SuperAdmin
     end
   end
 end

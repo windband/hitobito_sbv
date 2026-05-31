@@ -13,6 +13,10 @@ fr:
         one: Association générale
         many: Associations générales
         other: Associations générales
+      group/generalverband/super_admin:
+        one: Super-administrateur
+        many: Super-administrateurs
+        other: Super-administrateurs
 
       group/root:
         one: Organisation faîtière
@@ -62,6 +66,10 @@ fr:
         one: Responsable SUISA
         many: Responsables SUISA
         other: Responsables SUISA
+      group/root/super_admin:
+        one: Super-administrateur
+        many: Super-administrateurs
+        other: Super-administrateurs
 
       group/mitgliederverband:
         one: Association membre
@@ -218,6 +226,10 @@ fr:
         one: Administrateur
         many: Administrateurs
         other: Administrateurs
+      role/super_admin:
+        one: Super-administrateur
+        many: Super-administrateurs
+        other: Super-administrateurs
       role/adressverwaltung:
         one: Gestion des adresses
         many: Gestion des adresses
@@ -408,6 +420,7 @@ fr:
               layer_full: Tout lire et écrire à ce niveau. Créer des manifestations et des listes à ce niveau.
               group_full: Lire et écrire sur le groupe. Créer des manifestations et des listes sur le groupe.
               uv_lohnsumme: Peut gérer le salaire AA.
+              super_admin: Accès complet à toutes les fonctions et données de l'association.
 
       invoice_item:
         amount: Montant

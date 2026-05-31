@@ -54,5 +54,8 @@ class Group::Generalverband < ::Group
     self.permissions = [:layer_and_below_full, :admin, :impersonation, :finance, :uv_lohnsumme]
   end
 
-  roles Admin
+  class SuperAdmin < Role::SuperAdmin
+  end
+
+  roles Admin, SuperAdmin
 end
