@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 namespace :sbv do
-  desc "Assign Super-Administrator role to a person by email (default: simon@betschmann.ch)"
+  desc "Assign Super-Administrator role to a person by email"
   task :assign_super_admin, [:email] => :environment do |_task, args|
-    email = args[:email].presence || "simon@betschmann.ch"
-    person = Person.find_by(email: email)
+    email = args[:email].presence
+    abort "Usage: rake sbv:assign_super_admin[email@example.com]" unless email
 
+    person = Person.find_by(email: email)
     abort "Person with email #{email} not found" unless person
 
     [
