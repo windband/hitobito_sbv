@@ -1,6 +1,273 @@
 {
   "resources": [
     {
+      "name": "AdditionalAddressResource",
+      "type": "additional_addresses",
+      "graphql_entrypoint": "additionalAddresses",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "label": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "public": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "contactable_id": {
+          "type": "integer",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "contactable_type": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "address_care_of": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "street": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "housenumber": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "postbox": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "zip_code": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "town": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "country": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {},
+      "sorts": {
+        "id": {},
+        "label": {},
+        "public": {},
+        "contactable_id": {},
+        "contactable_type": {},
+        "address_care_of": {},
+        "street": {},
+        "housenumber": {},
+        "postbox": {},
+        "zip_code": {},
+        "town": {},
+        "country": {}
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "public": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ],
+          "single": true
+        },
+        "contactable_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "contactable_type": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "address_care_of": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "street": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "housenumber": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "postbox": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "zip_code": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "town": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "country": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {},
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "AdditionalEmailResource",
       "type": "additional_emails",
       "graphql_entrypoint": "additionalEmails",
@@ -41,23 +308,30 @@
           "readable": true,
           "writable": true,
           "description": null
+        },
+        "mailings": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "invoices": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        },
-        "label": {
-        },
-        "public": {
-        },
-        "contactable_id": {
-        },
-        "contactable_type": {
-        },
-        "email": {
-        }
+        "id": {},
+        "label": {},
+        "public": {},
+        "contactable_id": {},
+        "contactable_type": {},
+        "email": {},
+        "mailings": {},
+        "invoices": {}
       },
       "filters": {
         "id": {
@@ -133,10 +407,23 @@
             "match",
             "not_match"
           ]
+        },
+        "mailings": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ],
+          "single": true
+        },
+        "invoices": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ],
+          "single": true
         }
       },
-      "relationships": {
-      },
+      "relationships": {},
       "stats": {
         "total": [
           "count"
@@ -294,11 +581,9 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        }
+        "id": {}
       },
       "filters": {
         "id": {
@@ -361,6 +646,12 @@
           ],
           "single": true
         },
+        "kind_category_id": {
+          "type": "integer",
+          "operators": [
+            "eq"
+          ]
+        },
         "state": {
           "type": "string",
           "operators": [
@@ -398,15 +689,20 @@
           "description": null,
           "resource": "PersonResource"
         },
+        "kind": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "Event::KindResource"
+        },
         "dates": {
           "type": "has_many",
           "description": null,
           "resource": "Event::DateResource"
         },
-        "kind": {
-          "type": "belongs_to",
+        "participations": {
+          "type": "has_many",
           "description": null,
-          "resource": "Event::KindResource"
+          "resource": "Event::ParticipationResource"
         },
         "leaders": {
           "type": "has_many",
@@ -463,11 +759,9 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        }
+        "id": {}
       },
       "filters": {
         "id": {
@@ -507,6 +801,133 @@
       }
     },
     {
+      "name": "Event::GuestResource",
+      "type": "event_guests",
+      "graphql_entrypoint": "guests",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "first_name": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "last_name": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "nickname": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "company_name": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "company": {
+          "type": "boolean",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "email": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "address_care_of": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "street": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "housenumber": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "postbox": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "zip_code": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "town": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "country": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "language": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "phone_number": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        }
+      },
+      "extra_attributes": {},
+      "sorts": {
+        "id": {}
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {},
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "Event::KindCategoryResource",
       "type": "event_kind_categories",
       "graphql_entrypoint": "kindCategories",
@@ -523,13 +944,17 @@
           "readable": true,
           "writable": false,
           "description": null
+        },
+        "order": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        }
+        "id": {}
       },
       "filters": {
         "id": {
@@ -544,8 +969,7 @@
           ]
         }
       },
-      "relationships": {
-      },
+      "relationships": {},
       "stats": {
         "total": [
           "count"
@@ -607,11 +1031,9 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        }
+        "id": {}
       },
       "filters": {
         "id": {
@@ -631,6 +1053,259 @@
           "type": "belongs_to",
           "description": null,
           "resource": "Event::KindCategoryResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "Event::ParticipationResource",
+      "type": "event_participations",
+      "graphql_entrypoint": "participations",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "event_id": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "participant_id": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "participant_type": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "application_id": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "active": {
+          "type": "boolean",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "qualified": {
+          "type": "boolean",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "additional_information": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "created_at": {
+          "type": "datetime",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "updated_at": {
+          "type": "datetime",
+          "readable": true,
+          "writable": false,
+          "description": null
+        }
+      },
+      "extra_attributes": {},
+      "sorts": {
+        "id": {}
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "event_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "participant_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "participant_type": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "event": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "EventResource"
+        },
+        "participant": {
+          "type": "polymorphic_belongs_to",
+          "description": null,
+          "resources": [
+            "PersonResource",
+            "Event::GuestResource"
+          ],
+          "parent_resource": "Event::ParticipationResource"
+        },
+        "roles": {
+          "type": "has_many",
+          "description": null,
+          "resource": "Event::RoleResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "Event::RoleResource",
+      "type": "event_roles",
+      "graphql_entrypoint": "roles",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "participation_id": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "type": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "label": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        }
+      },
+      "extra_attributes": {},
+      "sorts": {
+        "id": {},
+        "participation_id": {},
+        "type": {},
+        "label": {}
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "participation_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "participation": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "Event::ParticipationResource"
         }
       },
       "stats": {
@@ -748,11 +1423,9 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        }
+        "id": {}
       },
       "filters": {
         "id": {
@@ -814,6 +1487,12 @@
             "eq"
           ],
           "single": true
+        },
+        "kind_category_id": {
+          "type": "integer",
+          "operators": [
+            "eq"
+          ]
         }
       },
       "relationships": {
@@ -822,10 +1501,20 @@
           "description": null,
           "resource": "PersonResource"
         },
+        "kind": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "Event::KindResource"
+        },
         "dates": {
           "type": "has_many",
           "description": null,
           "resource": "Event::DateResource"
+        },
+        "participations": {
+          "type": "has_many",
+          "description": null,
+          "resource": "Event::ParticipationResource"
         }
       },
       "stats": {
@@ -941,6 +1630,12 @@
           "writable": false,
           "description": null
         },
+        "self_registration_require_adult_consent": {
+          "type": "boolean",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
         "archived_at": {
           "type": "datetime",
           "readable": true,
@@ -961,6 +1656,72 @@
         },
         "deleted_at": {
           "type": "datetime",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "besetzung": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "vereinssitz": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "founding_year": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "klasse": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "unterhaltungsmusik": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "subventionen": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "manually_counted_members": {
+          "type": "boolean",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "manual_member_count": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "recognized_members": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "secondary_parent_id": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "tertiary_parent_id": {
+          "type": "integer",
           "readable": true,
           "writable": false,
           "description": null
@@ -971,49 +1732,51 @@
           "type": "string",
           "readable": true,
           "description": null
+        },
+        "language": {
+          "type": "string",
+          "readable": true,
+          "description": null
+        },
+        "privacy_policies": {
+          "type": "array",
+          "readable": true,
+          "description": null
         }
       },
       "sorts": {
-        "id": {
-        },
-        "name": {
-        },
-        "short_name": {
-        },
-        "display_name": {
-        },
-        "description": {
-        },
-        "layer": {
-        },
-        "parent_id": {
-        },
-        "layer_group_id": {
-        },
-        "type": {
-        },
-        "email": {
-        },
-        "address": {
-        },
-        "zip_code": {
-        },
-        "town": {
-        },
-        "country": {
-        },
-        "require_person_add_requests": {
-        },
-        "self_registration_url": {
-        },
-        "archived_at": {
-        },
-        "created_at": {
-        },
-        "updated_at": {
-        },
-        "deleted_at": {
-        }
+        "id": {},
+        "name": {},
+        "short_name": {},
+        "display_name": {},
+        "description": {},
+        "layer": {},
+        "parent_id": {},
+        "layer_group_id": {},
+        "type": {},
+        "email": {},
+        "address": {},
+        "zip_code": {},
+        "town": {},
+        "country": {},
+        "require_person_add_requests": {},
+        "self_registration_url": {},
+        "self_registration_require_adult_consent": {},
+        "archived_at": {},
+        "created_at": {},
+        "updated_at": {},
+        "deleted_at": {},
+        "besetzung": {},
+        "vereinssitz": {},
+        "founding_year": {},
+        "klasse": {},
+        "unterhaltungsmusik": {},
+        "subventionen": {},
+        "manually_counted_members": {},
+        "manual_member_count": {},
+        "recognized_members": {},
+        "secondary_parent_id": {},
+        "tertiary_parent_id": {}
       },
       "filters": {
         "id": {
@@ -1224,6 +1987,13 @@
             "not_match"
           ]
         },
+        "self_registration_require_adult_consent": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ],
+          "single": true
+        },
         "archived_at": {
           "type": "datetime",
           "operators": [
@@ -1281,6 +2051,142 @@
             "eq"
           ],
           "single": true
+        },
+        "besetzung": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "vereinssitz": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "founding_year": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "klasse": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "unterhaltungsmusik": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "subventionen": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "manually_counted_members": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ]
+        },
+        "manual_member_count": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "recognized_members": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "secondary_parent_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "tertiary_parent_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
         }
       },
       "relationships": {
@@ -1328,6 +2234,11 @@
           "type": "has_many",
           "description": null,
           "resource": "AdditionalEmailResource"
+        },
+        "mailing_lists": {
+          "type": "has_many",
+          "description": null,
+          "resource": "MailingListResource"
         }
       },
       "stats": {
@@ -1403,11 +2314,9 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        }
+        "id": {}
       },
       "filters": {
         "id": {
@@ -1525,11 +2434,9 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        }
+        "id": {}
       },
       "filters": {
         "id": {
@@ -1590,6 +2497,318 @@
       }
     },
     {
+      "name": "MailingListResource",
+      "type": "mailing_lists",
+      "graphql_entrypoint": "mailingLists",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "group_id": {
+          "type": "integer",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "description": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "publisher": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "mail_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "additional_sender": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "subscribable_for": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "subscribable_mode": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "subscribers_may_post": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "anyone_may_post": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "preferred_labels": {
+          "type": "array",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "delivery_report": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "main_email": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "subscribable": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+        "subscribers": {
+          "type": "array",
+          "readable": true,
+          "description": null
+        }
+      },
+      "sorts": {
+        "id": {},
+        "name": {},
+        "group_id": {},
+        "description": {},
+        "publisher": {},
+        "mail_name": {},
+        "additional_sender": {},
+        "subscribable_for": {},
+        "subscribable_mode": {},
+        "subscribers_may_post": {},
+        "anyone_may_post": {},
+        "preferred_labels": {},
+        "delivery_report": {},
+        "main_email": {},
+        "subscribable": {}
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "group_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "publisher": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "mail_name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "additional_sender": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "subscribable_for": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "subscribable_mode": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "subscribers_may_post": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ],
+          "single": true
+        },
+        "anyone_may_post": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ],
+          "single": true
+        },
+        "preferred_labels": {
+          "type": "array",
+          "operators": [
+            "eq"
+          ]
+        },
+        "delivery_report": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ],
+          "single": true
+        },
+        "main_email": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "subscribable": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ],
+          "single": true
+        }
+      },
+      "relationships": {
+        "group": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "GroupResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "Person::NameResource",
       "type": "person-name",
       "graphql_entrypoint": "names",
@@ -1614,11 +2833,9 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        }
+        "id": {}
       },
       "filters": {
         "id": {
@@ -1639,8 +2856,7 @@
           ]
         }
       },
-      "relationships": {
-      },
+      "relationships": {},
       "stats": {
         "total": [
           "count"
@@ -1698,6 +2914,30 @@
         "address": {
           "type": "string",
           "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "address_care_of": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "street": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "housenumber": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "postbox": {
+          "type": "string",
+          "readable": true,
           "writable": true,
           "description": null
         },
@@ -1717,6 +2957,12 @@
           "type": "string",
           "readable": true,
           "writable": true,
+          "description": null
+        },
+        "household_key": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
           "description": null
         },
         "primary_group_id": {
@@ -1736,39 +2982,57 @@
           "readable": "guarded",
           "writable": "guarded",
           "description": null
+        },
+        "language": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "picture": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "updated_at": {
+          "type": "datetime",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "additional_information": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        },
-        "first_name": {
-        },
-        "last_name": {
-        },
-        "nickname": {
-        },
-        "company_name": {
-        },
-        "company": {
-        },
-        "email": {
-        },
-        "address": {
-        },
-        "zip_code": {
-        },
-        "town": {
-        },
-        "country": {
-        },
-        "primary_group_id": {
-        },
-        "gender": {
-        },
-        "birthday": {
-        }
+        "id": {},
+        "first_name": {},
+        "last_name": {},
+        "nickname": {},
+        "company_name": {},
+        "company": {},
+        "email": {},
+        "address": {},
+        "address_care_of": {},
+        "street": {},
+        "housenumber": {},
+        "postbox": {},
+        "zip_code": {},
+        "town": {},
+        "country": {},
+        "household_key": {},
+        "primary_group_id": {},
+        "gender": {},
+        "birthday": {},
+        "language": {},
+        "picture": {},
+        "updated_at": {},
+        "additional_information": {}
       },
       "filters": {
         "id": {
@@ -1879,6 +3143,66 @@
             "not_match"
           ]
         },
+        "address_care_of": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "street": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "housenumber": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "postbox": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
         "zip_code": {
           "type": "string",
           "operators": [
@@ -1910,6 +3234,21 @@
           ]
         },
         "country": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "household_key": {
           "type": "string",
           "operators": [
             "eq",
@@ -1961,6 +3300,36 @@
             "lte"
           ]
         },
+        "language": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "picture": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
         "updated_at": {
           "type": "datetime",
           "operators": [
@@ -1970,6 +3339,21 @@
             "gte",
             "lt",
             "lte"
+          ]
+        },
+        "additional_information": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
           ]
         }
       },
@@ -1989,6 +3373,11 @@
           "description": null,
           "resource": "RoleResource"
         },
+        "qualifications": {
+          "type": "has_many",
+          "description": null,
+          "resource": "QualificationResource"
+        },
         "phone_numbers": {
           "type": "has_many",
           "description": null,
@@ -2003,6 +3392,11 @@
           "type": "has_many",
           "description": null,
           "resource": "AdditionalEmailResource"
+        },
+        "event_participations": {
+          "type": "has_many",
+          "description": null,
+          "resource": "Event::ParticipationResource"
         }
       },
       "stats": {
@@ -2054,21 +3448,14 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        },
-        "label": {
-        },
-        "public": {
-        },
-        "contactable_id": {
-        },
-        "contactable_type": {
-        },
-        "number": {
-        }
+        "id": {},
+        "label": {},
+        "public": {},
+        "contactable_id": {},
+        "contactable_type": {},
+        "number": {}
       },
       "filters": {
         "id": {
@@ -2146,7 +3533,179 @@
           ]
         }
       },
+      "relationships": {},
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "QualificationKindResource",
+      "type": "qualification_kinds",
+      "graphql_entrypoint": "qualificationKinds",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "label": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "description": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "validity": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "reactivateable": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "required_training_days": {
+          "type": "integer",
+          "readable": true,
+          "writable": false,
+          "description": null
+        }
+      },
+      "extra_attributes": {},
+      "sorts": {
+        "id": {}
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {},
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "QualificationResource",
+      "type": "qualifications",
+      "graphql_entrypoint": "qualifications",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "person_id": {
+          "type": "integer",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "qualification_kind_id": {
+          "type": "integer",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "start_at": {
+          "type": "date",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "finish_at": {
+          "type": "date",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "qualified_at": {
+          "type": "date",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "origin": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {},
+      "sorts": {
+        "id": {}
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "person_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "qualification_kind_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
       "relationships": {
+        "person": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "PersonResource"
+        },
+        "qualification_kind": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "QualificationKindResource"
+        }
       },
       "stats": {
         "total": [
@@ -2178,8 +3737,20 @@
           "writable": false,
           "description": null
         },
-        "deleted_at": {
-          "type": "datetime",
+        "start_on": {
+          "type": "date",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "end_on": {
+          "type": "date",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "name": {
+          "type": "string",
           "readable": true,
           "writable": false,
           "description": null
@@ -2209,25 +3780,18 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        },
-        "created_at": {
-        },
-        "updated_at": {
-        },
-        "deleted_at": {
-        },
-        "person_id": {
-        },
-        "group_id": {
-        },
-        "type": {
-        },
-        "label": {
-        }
+        "id": {},
+        "created_at": {},
+        "updated_at": {},
+        "start_on": {},
+        "end_on": {},
+        "name": {},
+        "person_id": {},
+        "group_id": {},
+        "type": {},
+        "label": {}
       },
       "filters": {
         "id": {
@@ -2263,8 +3827,8 @@
             "lte"
           ]
         },
-        "deleted_at": {
-          "type": "datetime",
+        "start_on": {
+          "type": "date",
           "operators": [
             "eq",
             "not_eq",
@@ -2272,6 +3836,32 @@
             "gte",
             "lt",
             "lte"
+          ]
+        },
+        "end_on": {
+          "type": "date",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
           ]
         },
         "person_id": {
@@ -2325,6 +3915,13 @@
             "match",
             "not_match"
           ]
+        },
+        "active": {
+          "type": "date",
+          "operators": [
+            "eq"
+          ],
+          "single": true
         }
       },
       "relationships": {
@@ -2344,6 +3941,91 @@
           "resource": "GroupResource"
         }
       },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "SelfRegistrationResource",
+      "type": "self_registrations",
+      "graphql_entrypoint": "selfRegistrations",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "first_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "last_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "nickname": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "company_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "company": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "email": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "adult_consent": {
+          "type": "boolean",
+          "readable": false,
+          "writable": true,
+          "description": null
+        },
+        "privacy_policy_accepted": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {},
+      "sorts": {
+        "id": {}
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {},
       "stats": {
         "total": [
           "count"
@@ -2393,21 +4075,14 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        },
-        "label": {
-        },
-        "public": {
-        },
-        "contactable_id": {
-        },
-        "contactable_type": {
-        },
-        "name": {
-        }
+        "id": {},
+        "label": {},
+        "public": {},
+        "contactable_id": {},
+        "contactable_type": {},
+        "name": {}
       },
       "filters": {
         "id": {
@@ -2485,8 +4160,7 @@
           ]
         }
       },
-      "relationships": {
-      },
+      "relationships": {},
       "stats": {
         "total": [
           "count"
@@ -2495,6 +4169,16 @@
     }
   ],
   "endpoints": {
+    "/api/event_kind_categories": {
+      "actions": {
+        "index": {
+          "resource": "Event::KindCategoryResource"
+        },
+        "show": {
+          "resource": "Event::KindCategoryResource"
+        }
+      }
+    },
     "/api/event_kinds": {
       "actions": {
         "index": {
@@ -2502,6 +4186,16 @@
         },
         "show": {
           "resource": "Event::KindResource"
+        }
+      }
+    },
+    "/api/event_participations": {
+      "actions": {
+        "index": {
+          "resource": "Event::ParticipationResource"
+        },
+        "show": {
+          "resource": "Event::ParticipationResource"
         }
       }
     },
@@ -2538,6 +4232,16 @@
         }
       }
     },
+    "/api/mailing_lists": {
+      "actions": {
+        "index": {
+          "resource": "MailingListResource"
+        },
+        "show": {
+          "resource": "MailingListResource"
+        }
+      }
+    },
     "/api/people": {
       "actions": {
         "index": {
@@ -2548,6 +4252,22 @@
         },
         "update": {
           "resource": "PersonResource"
+        }
+      }
+    },
+    "/api/qualifications": {
+      "actions": {
+        "index": {
+          "resource": "QualificationResource"
+        },
+        "show": {
+          "resource": "QualificationResource"
+        },
+        "create": {
+          "resource": "QualificationResource"
+        },
+        "destroy": {
+          "resource": "QualificationResource"
         }
       }
     },
@@ -2569,38 +4289,61 @@
           "resource": "RoleResource"
         }
       }
+    },
+    "/api/groups/1/self_registrations": {
+      "actions": {
+        "create": {
+          "resource": "SelfRegistrationResource"
+        }
+      }
     }
   },
   "types": {
-    "integer_id": {
-      "kind": "scalar",
-      "description": "Base Type. Query/persist as integer, render as string."
-    },
-    "uuid": {
-      "kind": "scalar",
-      "description": "Base Type. Like a normal string, but by default only eq/!eq and case-sensitive."
-    },
-    "string_enum": {
-      "kind": "scalar",
-      "description": "String enum type. Like a normal string, but only eq/!eq and case-sensitive. Limited to only the allowed values."
-    },
-    "integer_enum": {
-      "kind": "scalar",
-      "description": "Integer enum type. Like a normal integer, but only eq/!eq filters. Limited to only the allowed values."
-    },
-    "string": {
-      "kind": "scalar",
+    "array": {
+      "kind": "array",
       "description": "Base Type."
     },
-    "integer": {
-      "kind": "scalar",
+    "array_of_big_decimals": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_dates": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_datetimes": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_floats": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_integer_enums": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_integer_ids": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_integers": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_string_enums": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_strings": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_uuids": {
+      "kind": "array",
       "description": "Base Type."
     },
     "big_decimal": {
-      "kind": "scalar",
-      "description": "Base Type."
-    },
-    "float": {
       "kind": "scalar",
       "description": "Base Type."
     },
@@ -2616,53 +4359,37 @@
       "kind": "scalar",
       "description": "Base Type."
     },
+    "float": {
+      "kind": "scalar",
+      "description": "Base Type."
+    },
     "hash": {
       "kind": "record",
       "description": "Base Type."
     },
-    "array": {
-      "kind": "array",
+    "integer": {
+      "kind": "scalar",
       "description": "Base Type."
     },
-    "array_of_integer_ids": {
-      "kind": "array",
+    "integer_enum": {
+      "kind": "scalar",
+      "description": "Integer enum type. Like a normal integer, but only eq/!eq filters. Limited to only the allowed values."
+    },
+    "integer_id": {
+      "kind": "scalar",
+      "description": "Base Type. Query/persist as integer, render as string."
+    },
+    "string": {
+      "kind": "scalar",
       "description": "Base Type."
     },
-    "array_of_uuids": {
-      "kind": "array",
-      "description": "Base Type."
+    "string_enum": {
+      "kind": "scalar",
+      "description": "String enum type. Like a normal string, but only eq/!eq and case-sensitive. Limited to only the allowed values."
     },
-    "array_of_string_enums": {
-      "kind": "array",
-      "description": "Base Type."
-    },
-    "array_of_integer_enums": {
-      "kind": "array",
-      "description": "Base Type."
-    },
-    "array_of_strings": {
-      "kind": "array",
-      "description": "Base Type."
-    },
-    "array_of_integers": {
-      "kind": "array",
-      "description": "Base Type."
-    },
-    "array_of_big_decimals": {
-      "kind": "array",
-      "description": "Base Type."
-    },
-    "array_of_floats": {
-      "kind": "array",
-      "description": "Base Type."
-    },
-    "array_of_dates": {
-      "kind": "array",
-      "description": "Base Type."
-    },
-    "array_of_datetimes": {
-      "kind": "array",
-      "description": "Base Type."
+    "uuid": {
+      "kind": "scalar",
+      "description": "Base Type. Like a normal string, but by default only eq/!eq and case-sensitive."
     }
   }
 }
