@@ -17,6 +17,7 @@ module HitobitoSbv
       #{config.root}/app/abilities
       #{config.root}/app/domain
       #{config.root}/app/jobs
+      #{config.root}/app/resources
       #{config.root}/app/validators
     ]
 
