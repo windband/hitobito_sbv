@@ -101,6 +101,8 @@ module HitobitoSbv
       RoleAbility.include Sbv::RoleAbility
       GroupAbility.include Sbv::GroupAbility
       PersonAbility.include Sbv::PersonAbility
+      GroupBasedFetchables.prepend Sbv::GroupBasedFetchables
+      PersonReadables.prepend Sbv::PersonReadables
 
       # uv_lohnsumme allows to manage the salary amount for the accident insurance
       Role::Permissions << :uv_lohnsumme
