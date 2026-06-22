@@ -70,7 +70,7 @@ module Sbv::Group
 
   # actual other parents, secondary and tertiary
   def secondary_parents
-    [secondary_parent, tertiary_parent].compact
+    other_parent_ids.filter_map { |id| Group.find_by(id: id) }
   end
 
   # Vereine with secondary/tertiary parents belong to multiple Verbands hierarchies.
@@ -79,10 +79,14 @@ module Sbv::Group
     layers = super
     return layers unless layer_group.is_a?(Group::Verein)
 
-    additional_layers = layer_group.secondary_parents.flat_map do |parent|
-      parent.layer_hierarchy(**scope_args)
-    end
+    additional_layers = layer_group.other_parent_ids.filter_map do |parent_id|
+      Group.find_by(id: parent_id)&.layer_hierarchy(**scope_args)
+    end.flatten
     (layers + additional_layers).uniq
+  end
+
+  def other_parent_ids
+    [secondary_parent_id, tertiary_parent_id].compact
   end
 
   def song_counts
