@@ -7,12 +7,16 @@
 
 require "spec_helper"
 
-describe GroupAbility do
+describe PersonAbility do
   subject { ability }
 
   let(:ability) { Ability.new(role.person.reload) }
   let(:verein) { groups(:musikgesellschaft_alterswil) }
+  let(:mitglieder) { groups(:mitglieder_38) }
   let(:secondary_mitgliederverband) { groups(:bernischer_kantonal_musikverband) }
+  let(:member) do
+    Fabricate(Group::VereinMitglieder::Mitglied.sti_name.to_sym, group: mitglieder)
+  end
 
   before do
     verein.update!(secondary_parent_id: secondary_mitgliederverband.id)
@@ -24,23 +28,16 @@ describe GroupAbility do
         group: secondary_mitgliederverband)
     end
 
-    it "may update the verein" do
-      is_expected.to be_able_to(:update, verein)
+    it "may show a person in the secondary affiliated verein" do
+      is_expected.to be_able_to(:show, member.person)
     end
 
-    it "may show details of the verein" do
-      is_expected.to be_able_to(:show_details, verein)
+    it "may show full details of a person in the secondary affiliated verein" do
+      is_expected.to be_able_to(:show_full, member.person)
     end
 
-    it "may manage roles in the verein" do
-      mitglieder = groups(:mitglieder_38)
-      role_in_verein = Fabricate(
-        Group::VereinMitglieder::Mitglied.sti_name.to_sym,
-        group: mitglieder
-      )
-
-      is_expected.to be_able_to(:update, role_in_verein)
-      is_expected.to be_able_to(:index_people, mitglieder)
+    it "may update a person in the secondary affiliated verein" do
+      is_expected.to be_able_to(:update, member.person)
     end
   end
 
@@ -54,8 +51,8 @@ describe GroupAbility do
       verein.update!(secondary_parent_id: nil, tertiary_parent_id: nil)
     end
 
-    it "may not update the verein" do
-      is_expected.not_to be_able_to(:update, verein)
+    it "may not show a person in the verein" do
+      is_expected.not_to be_able_to(:show, member.person)
     end
   end
 end

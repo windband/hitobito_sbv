@@ -38,9 +38,9 @@ module Sbv
     end
 
     def secondary_parent_verein_layer_group_ids(layer_ids)
-      Group::Verein
+      ::Group::Verein
         .where(secondary_parent_id: layer_ids)
-        .or(Group::Verein.where(tertiary_parent_id: layer_ids))
+        .or(::Group::Verein.where(tertiary_parent_id: layer_ids))
         .pluck(:id)
     end
   end

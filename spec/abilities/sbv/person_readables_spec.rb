@@ -23,7 +23,7 @@ describe PersonReadables do
   let(:accessible) { Person.accessible_by(ability) }
 
   before do
-    verein.update!(secondary_parent: secondary_mitgliederverband)
+    verein.update!(secondary_parent_id: secondary_mitgliederverband.id)
   end
 
   context "global listing with secondary parent affiliation" do
@@ -33,7 +33,7 @@ describe PersonReadables do
 
     context "without secondary affiliation" do
       before do
-        verein.update!(secondary_parent: nil, tertiary_parent: nil)
+        verein.update!(secondary_parent_id: nil, tertiary_parent_id: nil)
       end
 
       it "does not include members of the verein" do
@@ -59,7 +59,7 @@ describe PersonFullReadables do
   let(:accessible) { Person.accessible_by(ability) }
 
   before do
-    verein.update!(secondary_parent: secondary_mitgliederverband)
+    verein.update!(secondary_parent_id: secondary_mitgliederverband.id)
   end
 
   it "includes members of secondary affiliated vereins" do
@@ -83,7 +83,7 @@ describe SearchStrategies::PersonSearch do
   let(:user) { role.person.reload }
 
   before do
-    verein.update!(secondary_parent: secondary_mitgliederverband)
+    verein.update!(secondary_parent_id: secondary_mitgliederverband.id)
   end
 
   it "finds members of secondary affiliated vereins" do

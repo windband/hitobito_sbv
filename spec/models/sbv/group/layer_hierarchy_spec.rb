@@ -14,8 +14,8 @@ describe Group, "#layer_hierarchy" do
 
   before do
     verein.update!(
-      secondary_parent: secondary_mitgliederverband,
-      tertiary_parent: tertiary_regionalverband
+      secondary_parent_id: secondary_mitgliederverband.id,
+      tertiary_parent_id: tertiary_regionalverband.id
     )
   end
 

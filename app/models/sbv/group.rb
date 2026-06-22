@@ -77,7 +77,7 @@ module Sbv::Group
   # Include those layers so both Verbände can administer the Verein.
   def layer_hierarchy(**scope_args)
     layers = super
-    return layers unless layer_group.is_a?(Group::Verein)
+    return layers unless layer_group.is_a?(::Group::Verein)
 
     additional_layers = layer_group.other_parent_ids.filter_map do |parent_id|
       Group.find_by(id: parent_id)&.layer_hierarchy(**scope_args)
@@ -90,12 +90,12 @@ module Sbv::Group
   end
 
   def song_counts
-    verein_sql = descendants.where(type: Group::Verein).without_deleted.select(:id).to_sql
+    verein_sql = descendants.where(type: ::Group::Verein).without_deleted.select(:id).to_sql
     SongCount.joins(:concert).where("concerts.verein_id IN (#{verein_sql})")
   end
 
   def member_count
-    return unless is_a?(Group::Verein)
+    return unless is_a?(::Group::Verein)
 
     Group::VereinMitglieder::Mitglied.joins(:group).where(groups: {layer_group_id: id}).count
   end
